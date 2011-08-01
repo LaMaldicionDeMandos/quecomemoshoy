@@ -10,7 +10,6 @@
 		<artifactId>quecomemoshoy-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	
 	<dependencies>
 		<dependency>
 			<groupId>${pom.groupId}</groupId>
@@ -20,9 +19,10 @@
 		<!-- Web Container dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>${servlet.version}</version>
-			<scope>provided</scope>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 </project>

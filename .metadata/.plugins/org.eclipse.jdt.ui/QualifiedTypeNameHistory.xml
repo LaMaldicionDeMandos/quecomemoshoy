@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+<fullyQualifiedTypeName name="org.pasut.quecomemoshoy.services.RecipesService"/>
+<fullyQualifiedTypeName name="com.google.inject.Inject"/>
+</qualifiedTypeNameHistroy>

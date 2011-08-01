@@ -1,0 +1,5 @@
+package org.pasut.quecomemoshoy.services;
+
+public class RecipesService {
+
+}

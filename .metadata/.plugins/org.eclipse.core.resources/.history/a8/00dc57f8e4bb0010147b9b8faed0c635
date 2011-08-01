@@ -1,0 +1,101 @@
+<project-modules id="moduleCoreId" project-version="2.0">
+  <wb-module deploy-name="quecomemoshoy-web">
+    <property name="context-root" value="quecomemoshoy-web"/>
+    <wb-resource deploy-path="/" source-path="src/main/webapp"/>
+    <property name="java-output-path" value="/target/classes"/>
+    <dependent-module archiveName="activation-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/activation/activation/1.1/activation-1.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="aopalliance-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="apache-mime4j-0.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/apache/james/apache-mime4j/0.6/apache-mime4j-0.6.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="commons-codec-1.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/commons-codec/commons-codec/1.2/commons-codec-1.2.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="commons-httpclient-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="FastInfoset-1.2.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/com/sun/xml/fastinfoset/FastInfoset/1.2.7/FastInfoset-1.2.7.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="guice-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/com/google/code/guice/guice/1.0/guice-1.0.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="guice-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/com/google/inject/guice/2.0/guice-2.0.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jackson-core-asl-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-core-asl/1.0.1/jackson-core-asl-1.0.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jackson-jaxrs-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-jaxrs/1.0.1/jackson-jaxrs-1.0.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jackson-mapper-asl-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.0.1/jackson-mapper-asl-1.0.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="javassist-3.6.0.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javassist/javassist/3.6.0.GA/javassist-3.6.0.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="javax.servlet-api-3.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jaxb-api-2.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jaxb-impl-2.1.10.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.10/jaxb-impl-2.1.10.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jaxrs-api-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/jaxrs-api/1.1.GA/jaxrs-api-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jcl-over-slf4j-1.5.8.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/slf4j/jcl-over-slf4j/1.5.8/jcl-over-slf4j-1.5.8.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jettison-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jsr250-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="mail-1.4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/mail/mail/1.4/mail-1.4.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="quecomemoshoy-services.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/quecomemoshoy-services/quecomemoshoy-services">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="resteasy-guice-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/resteasy-guice/1.1.GA/resteasy-guice-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="resteasy-jackson-provider-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/resteasy-jackson-provider/1.1.GA/resteasy-jackson-provider-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="resteasy-jaxb-provider-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/resteasy-jaxb-provider/1.1.GA/resteasy-jaxb-provider-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="resteasy-jaxrs-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/resteasy-jaxrs/1.1.GA/resteasy-jaxrs-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="resteasy-multipart-provider-1.1.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/jboss/resteasy/resteasy-multipart-provider/1.1.GA/resteasy-multipart-provider-1.1.GA.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="scannotation-1.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/scannotation/scannotation/1.0.2/scannotation-1.0.2.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="sjsxp-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/com/sun/xml/stream/sjsxp/1.0.1/sjsxp-1.0.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="slf4j-api-1.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="slf4j-simple-1.5.8.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/slf4j/slf4j-simple/1.5.8/slf4j-simple-1.5.8.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="stax-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/xml/stream/stax-api/1.0/stax-api-1.0.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+  </wb-module>
+</project-modules>
