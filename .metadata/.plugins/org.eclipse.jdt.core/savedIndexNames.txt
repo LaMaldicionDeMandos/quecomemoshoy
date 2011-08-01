@@ -1,13 +1,5 @@
 INDEX VERSION 1.126+C:\proyectos\quecomemoshoy\.metadata\.plugins\org.eclipse.jdt.core
-50125687.index
-518784184.index
-1389255952.index
-1811316702.index
-830037534.index
-1243667396.index
-1122059128.index
-1195974691.index
-734223952.index
-781717275.index
-2879416069.index
-1789109613.index
+694547559.index
+1170165813.index
+2528564467.index
+416792309.index
