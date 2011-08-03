@@ -1,14 +1,15 @@
+var recipeModel;
+var recipeService;
 $(document).ready(function(){
 	var callback = function(data){
-		rs.recipes = data;
-		alert(rs.recipes);
+		recipeModel = new RecipeModel(data);
+		alert(recipeModel.recipes);
 	};
-	var rs = new RecipeService();
-	rs.loadRecipes(callback);
+	recipeService = new RecipeService();
+	recipeService.loadRecipes(callback);
 });
 
 RecipeService = function(){
-	this.recipes;
 }
 
 RecipeService.prototype.loadRecipes = function(callback){
@@ -17,6 +18,10 @@ RecipeService.prototype.loadRecipes = function(callback){
 		url : 'services/recipes/ingredients',
 		success : callback
 	});
+}
+
+RecipeModel = function(recipes){
+	this.recipes = recipes;
 }
 
 Recipe = function(){
