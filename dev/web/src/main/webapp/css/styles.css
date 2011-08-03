@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+body{
+	background-color: #ea8017;
+	margin: 0px;
+}
+
+div.header{
+	height: 80px;
+	width: 100%;
+}
+
+div.body{
+	background-color: #ffcfaf;
+	height: 520px;
+	margin: 0px;
+}
+
+div.tab{
+	background-color: #942611;
+    bottom: -40px;
+    right: 5px;
+    float: right;
+    height: 40px;
+    position: relative;
+    width: 300px;
+    margin-left: 5px;
+    text-align: center;
+}
