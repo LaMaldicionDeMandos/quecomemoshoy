@@ -11,18 +11,42 @@ div.header{
 
 div.body{
 	background-color: #ffcfaf;
+	position: absolute;
+	top: 80px;
+	width: 100%;
 	height: 520px;
 	margin: 0px;
 }
 
 div.tab{
+	/*Apariencia*/
 	background-color: #942611;
+    
+    /*Tamaño*/
+    height: 40px;
+    width: 300px;
+
+    /*Posicion*/
+    position: relative;
+    float: right;
+
+    /*Layput*/
     bottom: -40px;
     right: 5px;
-    float: right;
-    height: 40px;
-    position: relative;
-    width: 300px;
     margin-left: 5px;
     text-align: center;
+}
+
+div.leftPanel{
+	background-color: #ffcfaf;
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+
+div.rightPanel{
+	background-color: #d4340c;
+	float: right;
+	width: 60%;
+	height: 100%;
 }

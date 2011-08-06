@@ -1,22 +1,16 @@
-var recipeModel;
-var recipeService;
-$(document).ready(function(){
-	var callback = function(data){
-		recipeModel = new RecipeModel(data);
-		alert(recipeModel.recipes);
-	};
-	recipeService = new RecipeService();
-	recipeService.loadRecipes(callback);
-});
-
 RecipeService = function(){
+	this.ingredients;
 }
 
 RecipeService.prototype.loadRecipes = function(callback){
-	$.ajax({
+	var that = this;
+	$j.ajax({
 		type : 'GET',
 		url : 'services/recipes/ingredients',
-		success : callback
+		success : function(ingredients){
+			that.ingredients = ingredients;
+			callback(ingredients);
+		}
 	});
 }
 
