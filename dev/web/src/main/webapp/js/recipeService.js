@@ -2,6 +2,8 @@ RecipeService = function(){
 	this.ingredients;
 }
 
+RecipeService.ARRIVE_INGREDIENTS_EVENT = "arriveIngredientsEvent";
+
 RecipeService.prototype.loadRecipes = function(callback){
 	var that = this;
 	$j.ajax({
@@ -9,7 +11,8 @@ RecipeService.prototype.loadRecipes = function(callback){
 		url : 'services/recipes/ingredients',
 		success : function(ingredients){
 			that.ingredients = ingredients;
-			callback(ingredients);
+			ee.emit(RecipeService.ARRIVE_INGREDIENTS_EVENT,ingredients);
+			//callback(ingredients);
 		}
 	});
 }
@@ -24,6 +27,7 @@ Recipe = function(){
 	this.peopleAmountl;
 	this.elavoration;
 	this.photos;
+	this.video;
 }
 
 Ingredient = function(){

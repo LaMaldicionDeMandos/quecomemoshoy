@@ -2,11 +2,11 @@ var recipeModel;
 var recipeService;
 var page;
 $j(document).ready(function(){
-	page = new Page();
+	recipeService = new RecipeService();
 	var callback = function(data){
 		recipeModel = new RecipeModel(data);
-		//alert(recipeModel.recipes);
 	};
-	recipeService = new RecipeService();
-	recipeService.loadRecipes(callback);
+	ee.addListener(RecipeService.ARRIVE_INGREDIENTS_EVENT,callback);
+	recipeService.loadRecipes();
+	page = new Page();
 });

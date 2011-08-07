@@ -50,3 +50,36 @@ div.rightPanel{
 	width: 60%;
 	height: 100%;
 }
+
+h1.title{
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+}
+
+input.textInput{
+	border: 1px solid #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    margin-left:10px;
+    margin-right:10px;
+    font: 20px arial;
+    padding: 8px 12px;
+    width: 90%;
+}
+
+div.list{
+	background: none repeat scroll 0 0 #FDFDFD;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px 20px 20px 30px;
+    margin: 20px 10px;
+    height: 65%;
+}
+
+div.listItemRenderer{
+	font: 16px arial;
+	font-weight: bold;
+	height: 40px;
+	width: 100%;
+}
