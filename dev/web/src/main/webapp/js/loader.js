@@ -6,7 +6,7 @@ $j(document).ready(function(){
 	var callback = function(data){
 		recipeModel = new RecipeModel(data);
 	};
-	ee.addListener(RecipeService.ARRIVE_INGREDIENTS_EVENT,callback);
+	ee.addListener(RecipeService.ARRIVE_RECIPES_EVENT,callback);
 	recipeService.loadRecipes();
 	page = new Page();
 });

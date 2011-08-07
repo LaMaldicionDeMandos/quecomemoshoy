@@ -38,15 +38,7 @@ HeaderTab = function (parent,id,targetName,title,clickHandler){
 		clickHandler(that.targetName);
 	});
 }
-/*
-function createRecipeList(parent){
-	parent.append("<div id='recipeList' class='leftPanel'/>");
-}
 
-function createRecipeView(parent){
-	parent.append("<div id='recipeView' class='rightPanel'/>");
-}
-*/
 function getVisibleStyle(visible){
 	return visible ? "" : "style='display:none' ";
 }
@@ -74,8 +66,8 @@ SearchPanel = function(parent, id, visible){
 	var style = getVisibleStyle(visible);
 	parent.component.append("<div id='"+id+"' class='body' "+style+"/>");
 	this.component = $j("#"+id);
-	this.recipeListPanel = new RecipeListPanel(this,"recipeList", "¡Busca recetas por su nombre!");
-	this.recipeViewPanel = new RecipeViewPanel(this,"recipeView");
+	this.recipeListPanel = new RecipeListPanel(this,"recipeListPanel", "¡Busca recetas por su nombre!");
+	this.recipeViewPanel = new RecipeViewPanel(this,"recipeViewPanel");
 }
 
 RecipeListPanel = function(parent, id, title){
@@ -116,7 +108,7 @@ RecipeList = function(parent, id){
 	this.filter = function(value){
 		for(var i=0;i<that.recipeList.length;i++){
 			var item = that.recipeList[i];
-			if(item.recipe.toLowerCase().indexOf(value.toLowerCase())<0){
+			if(item.recipe.name.toLowerCase().indexOf(value.toLowerCase())<0){
 				item.hide();
 			}
 			else{
@@ -126,28 +118,156 @@ RecipeList = function(parent, id){
 	}
 	
 	if(!recipeModel)
-		ee.addListener(RecipeService.ARRIVE_INGREDIENTS_EVENT,this.loadRecipes);
+		ee.addListener(RecipeService.ARRIVE_RECIPES_EVENT,this.loadRecipes);
 	else
 		this.loadRecipes(recipeModel.recipes);
 }
 
 RecipeListItemRenderer=function(parent,recipe){
+	var that = this;
 	this.recipe = recipe;
 	this.visible = true;
-	parent.component.append("<div id='renderer"+recipe+"' class='listItemRenderer'>"+this.recipe+"</div>");
-	this.component = $j("#renderer"+recipe);
+	this.selected = false;
+	this.id = "renderer"+removeSpaces(recipe.name);
+	parent.component.append("<div id='"+this.id+"' class='listItemRenderer'>"+this.recipe.name+"</div>");
+	this.component = $j("#"+this.id);
+	this.component.click(function(){
+		that.select();
+		ee.emit(RecipeModel.SELECT_RECIPE_EVENT,that.recipe);
+	});
 	this.hide = function(){
 		this.visible = false;
 		this.component.hide();
+		if(this.selected){
+			this.unselect();
+			ee.emit(RecipeModel.UNSELECT_RECIPE_EVENT);
+		}
 	}
 	
 	this.show = function(){
 		this.visible = true;
 		this.component.show();
 	}
+	ee.addListener(RecipeModel.SELECT_RECIPE_EVENT,function(recipe){
+		if(recipe==that.recipe) return;
+		that.unselect();
+	});
+	this.unselect = function(){
+		this.selected = false;
+		this.component.attr("class","listItemRenderer");
+	}
+	this.select = function(){
+		this.selected = true;
+		this.component.attr("class","selectedItemRenderer");
+	}
 }
 
 RecipeViewPanel = function(parent, id){
+	var that = this;
 	parent.component.append("<div id='"+id+"' class='rightPanel'/>");
 	this.component = $j("#"+id);
+	this.emptyView = new RecipeEmptyView(this,"recipeEmptyView");
+	this.recipeView = new RecipeView(this,"recipeView");
+	
+	this.emptyView.show();
+	this.recipeView.hide();
+	
+	ee.addListener(RecipeModel.SELECT_RECIPE_EVENT, function(recipe){
+		if(recipe){
+			that.emptyView.hide();
+			that.recipeView.update(recipe);
+			that.recipeView.show();
+		}
+		else{
+			that.emptyView.show();
+			that.recipeView.hide();
+		}
+	});		
+	
+	ee.addListener(RecipeModel.UNSELECT_RECIPE_EVENT, function(){
+		that.emptyView.show();
+		that.recipeView.hide();
+	});
+}
+
+RecipeEmptyView = function(parent, id){
+	var that = this;
+	parent.component.append("<div id='"+id+"' class='recipeEmptyView'><h1>EMPTY_PANEL</h1>");
+	this.component = $j("#"+id);
+	this.show = function(){
+		that.component.show();
+	}
+	this.hide = function(){
+		that.component.hide();
+	}
+}
+
+RecipeView = function(parent, id){
+	var that = this;
+	this.recipe = null;
+	parent.component.append("<div id='"+id+"' class='recipeFullView'/>");
+	this.component = $j("#"+id);
+	this.attributesPanel = new RecipeAttributes(this,"recipeAttributesPanel");
+	this.elavorationPanel = new RecipeElavoration(this,"recipeElavorationPanel");
+	this.show = function(){
+		that.component.show();
+	}
+	this.hide = function(){
+		that.component.hide();
+	}
+	
+	this.update = function(recipe){
+		this.recipe = recipe;
+		this.attributesPanel.update(recipe);
+		this.elavorationPanel.update(recipe);
+	}
+}
+
+RecipeAttributes = function(parent, id){
+	this.recipe = null;
+	parent.component.append("<div id='"+id+"' class='recipeAttributesPanel' center='center'/>");
+	this.component = $j("#"+id);
+	this.component.append("<div class='photoPanel'><h3>Fotos en construccion</h3></div>");
+	
+	this.peopleLabel = new RecipePeopleAmountPanel(this,"peopleLabel");
+	this.ingredientsPanel = new IngredientList(this,"ingredientList");
+	
+	this.update = function(recipe){
+		this.recipe = recipe;
+		this.peopleLabel.update(recipe);
+		this.ingredientsPanel.update(recipe);
+	}
+}
+
+RecipePeopleAmountPanel = function(parent, id){
+	this.recipe = null;
+	this.staticText = "Número de personas: ";
+	parent.component.append("<div id='"+id+"' class='peopleAmountPanel'/>");
+	this.component = $j("#"+id);
+	this.update = function(recipe){
+		this.recipe = recipe;
+		this.component.html(this.staticText + recipe.peopleAmount);
+	}
+}
+
+IngredientList = function(parent, id){
+	this.recipe = null;
+	parent.component.append("<div id='"+id+"' class='ingredientsPanel'/>");
+	this.component = $j("#"+id);
+	this.update = function(recipe){
+		this.recipe = recipe;
+		$j("#"+id+" div").remove();
+		for(var i=0;i<recipe.ingredients.length;i++){
+			this.component.append("<div class='listIngredientsItemRenderer'>"+recipe.ingredients[i].toString()+"</div>");
+		}
+	}
+}
+
+RecipeElavoration = function(parent, id){
+	this.recipe = null;
+	parent.component.append("<div id='"+id+"' class='recipeElavorationPanel' />");
+	this.component = $j("#"+id);
+	this.update = function(recipe){
+		this.recipe = recipe;
+	}
 }

@@ -51,6 +51,73 @@ div.rightPanel{
 	height: 100%;
 }
 
+div.recipeEmptyView{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+div.recipeFullView{
+	background-color: #ffcfaf;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+div.recipeAttributesPanel{
+	float: left;
+	width: 33%;
+	height: 98%;
+	padding-top: 10px;
+}
+
+div.photoPanel{
+	background-color: #000000;
+	color: #ffffff;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    
+	width: 250px;
+	height: 200px;
+}
+
+div.peopleAmountPanel {
+    font: bold 16px arial;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+    text-align: center;
+    width: 250px;
+}
+
+div.ingredientsPanel{
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+	width: 250px;
+	height: 230px;
+	border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    /*margin: 20px 10px;*/
+    /*padding: 0 0 20px;*/
+}
+
+div.listIngredientsItemRenderer{
+	font: bold 14px arial;
+    height: 20px;
+    padding: 6px 0 0 6px;
+    width: 97.5%;
+}
+
+div.recipeElavorationPanel{
+	background-color: #0000ff;
+	float: right;
+	width: 66%;
+	height: 100%;
+}
+
 h1.title{
 	width: 100%;
 	text-align: center;
@@ -69,17 +136,24 @@ input.textInput{
 }
 
 div.list{
-	background: none repeat scroll 0 0 #FDFDFD;
     border: 1px solid #CCCCCC;
     border-radius: 5px 5px 5px 5px;
-    padding: 15px 20px 20px 30px;
-    margin: 20px 10px;
     height: 65%;
+    margin: 20px 10px;
+    padding: 0 0 20px;
 }
 
 div.listItemRenderer{
-	font: 16px arial;
-	font-weight: bold;
-	height: 40px;
-	width: 100%;
+	font: bold 16px arial;
+    height: 40px;
+    padding: 12px 0 0 12px;
+    width: 97.5%;
+}
+
+div.selectedItemRenderer {
+    background-color: #FFEADC;
+    font: bold 16px arial;
+    height: 40px;
+    padding: 12px 0 0 12px;
+    width: 97.5%;
 }
