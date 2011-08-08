@@ -111,6 +111,14 @@ div.listIngredientsItemRenderer{
     width: 97.5%;
 }
 
+div.titleItemRenderer{
+	text-decoration:underline;
+	font: bold 14px arial;
+    height: 20px;
+    padding: 6px 0 0 6px;
+    width: 97.5%;
+}
+
 div.recipeElavorationPanel{
 	background-color: #0000ff;
 	float: right;

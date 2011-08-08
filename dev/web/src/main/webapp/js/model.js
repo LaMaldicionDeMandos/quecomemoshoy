@@ -31,4 +31,5 @@ Recipe = function(recipe){
 	for(var i=0;i<recipe.optionalIngredients.length;i++){
 		this.optionalIngredients.push(new Ingredient(recipe.optionalIngredients[i]));
 	}
+	this.hasOptionalIngredients = this.optionalIngredients.length>0;
 }

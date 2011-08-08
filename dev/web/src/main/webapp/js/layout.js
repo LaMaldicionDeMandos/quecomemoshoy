@@ -257,8 +257,17 @@ IngredientList = function(parent, id){
 	this.update = function(recipe){
 		this.recipe = recipe;
 		$j("#"+id+" div").remove();
+		$j("#"+id+" hr").remove();
+		this.component.append("<div class='titleItemRenderer'>Ingredientes:</div>");
 		for(var i=0;i<recipe.ingredients.length;i++){
 			this.component.append("<div class='listIngredientsItemRenderer'>"+recipe.ingredients[i].toString()+"</div>");
+		}
+		if(recipe.hasOptionalIngredients){
+			this.component.append("<hr/>");
+			this.component.append("<div class='titleItemRenderer'>Ingredientes Opcionales:</div>");
+		}
+		for(var i=0;i<recipe.optionalIngredients.length;i++){
+			this.component.append("<div class='listIngredientsItemRenderer'>"+recipe.optionalIngredients[i].toString()+"</div>");
 		}
 	}
 }
