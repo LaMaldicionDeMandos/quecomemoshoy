@@ -82,14 +82,22 @@ div.photoPanel{
 	height: 200px;
 }
 
-div.peopleAmountPanel {
-    font: bold 16px arial;
+div.centerSubtitle {
+    font: bold 16px verdana;
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 0;
     text-align: center;
     width: 250px;
+}
+
+div.subtitle {
+    font: bold 16px verdana;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    padding: 10px 0;
+    width: 100%;
 }
 
 div.ingredientsPanel{
@@ -105,7 +113,7 @@ div.ingredientsPanel{
 }
 
 div.listIngredientsItemRenderer{
-	font: bold 14px arial;
+	font: bold 12px verdana;
     height: 20px;
     padding: 6px 0 0 6px;
     width: 97.5%;
@@ -113,14 +121,13 @@ div.listIngredientsItemRenderer{
 
 div.titleItemRenderer{
 	text-decoration:underline;
-	font: bold 14px arial;
+	font: bold 14px verdana;
     height: 20px;
     padding: 6px 0 0 6px;
     width: 97.5%;
 }
 
-div.recipeElavorationPanel{
-	background-color: #0000ff;
+div.recipeElaborationPanel{
 	float: right;
 	width: 66%;
 	height: 100%;
@@ -138,7 +145,7 @@ input.textInput{
     border-radius: 8px 8px 8px 8px;
     margin-left:10px;
     margin-right:10px;
-    font: 20px arial;
+    font: 20px verdana;
     padding: 8px 12px;
     width: 90%;
 }
@@ -152,7 +159,7 @@ div.list{
 }
 
 div.listItemRenderer{
-	font: bold 16px arial;
+	font: bold 16px verdana;
     height: 40px;
     padding: 12px 0 0 12px;
     width: 97.5%;
@@ -160,8 +167,23 @@ div.listItemRenderer{
 
 div.selectedItemRenderer {
     background-color: #FFEADC;
-    font: bold 16px arial;
+    font: bold 16px verdana;
     height: 40px;
     padding: 12px 0 0 12px;
     width: 97.5%;
+}
+
+h1{
+	margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+p.textArea{
+	background-color: #FFFFFF;
+	font: 16px verdana;
+    border-radius: 8px 8px 8px 8px;
+    height: 72%;
+    margin: 0px 10px;
+    padding: 10px 15px;
 }

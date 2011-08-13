@@ -17,19 +17,19 @@ public final class Recipe {
 	private List<Ingredient> ingredients;
 	private List<Ingredient> optionalIngredients;
 	private int peopleAmount;
-	private String elavoration;
+	private String elaboration;
 	private List<String> photos;
 	private String video;
 	
 	public Recipe(){}
 	
-	public Recipe(String name, String elavoration, int peopleAmount, List<Ingredient> ingredients){
-		this(name,elavoration,peopleAmount,ingredients,new ArrayList<Ingredient>());
+	public Recipe(String name, String elaboration, int peopleAmount, List<Ingredient> ingredients){
+		this(name,elaboration,peopleAmount,ingredients,new ArrayList<Ingredient>());
 	}
 	
-	public Recipe(String name, String elavoration, int peopleAmount, List<Ingredient> ingredients, List<Ingredient> optionalIngredients){
+	public Recipe(String name, String elaboration, int peopleAmount, List<Ingredient> ingredients, List<Ingredient> optionalIngredients){
 		this.name = name;
-		this.elavoration = elavoration;
+		this.elaboration = elaboration;
 		this.peopleAmount = peopleAmount;
 		this.ingredients = ingredients;
 		this.optionalIngredients = optionalIngredients;
@@ -62,8 +62,8 @@ public final class Recipe {
 	public int getPeopleAmount() {
 		return peopleAmount;
 	}
-	public String getElavoration() {
-		return elavoration;
+	public String getElaboration() {
+		return elaboration;
 	}
 	public List<String> getPhotos() {
 		return new ArrayList<String>(photos);
@@ -77,7 +77,7 @@ public final class Recipe {
 		if(o instanceof Recipe) return false;
 		Recipe r = (Recipe)o;
 		return  this.name.equals(r.getName()) && 
-				this.elavoration.equals(r.getElavoration()) &&
+				this.elaboration.equals(r.getElaboration()) &&
 				this.ingredients.equals(r.getIngredients()) &&
 				this.optionalIngredients.equals(r.getOptionalIngredients()) &&
 				this.peopleAmount == this.getPeopleAmount();
@@ -86,7 +86,7 @@ public final class Recipe {
 	@Override
 	public int hashCode(){
 		return  this.name.hashCode() + 
-				this.elavoration.hashCode() + 
+				this.elaboration.hashCode() + 
 				this.ingredients.hashCode() +
 				this.optionalIngredients.hashCode() +
 				this.peopleAmount;

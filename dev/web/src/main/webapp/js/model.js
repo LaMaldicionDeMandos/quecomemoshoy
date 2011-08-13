@@ -19,7 +19,7 @@ Ingredient = function(ingredient){
 Recipe = function(recipe){
 	this.name = recipe.name;
 	this.peopleAmount = recipe.peopleAmount;
-	this.elavoration = recipe.elavoration;
+	this.elaboration = recipe.elaboration;
 	this.video = recipe.video;
 	this.photos = recipe.photos;
 	

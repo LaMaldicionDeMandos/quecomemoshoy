@@ -208,7 +208,7 @@ RecipeView = function(parent, id){
 	parent.component.append("<div id='"+id+"' class='recipeFullView'/>");
 	this.component = $j("#"+id);
 	this.attributesPanel = new RecipeAttributes(this,"recipeAttributesPanel");
-	this.elavorationPanel = new RecipeElavoration(this,"recipeElavorationPanel");
+	this.elaborationPanel = new RecipeElaboration(this,"recipeElaborationPanel");
 	this.show = function(){
 		that.component.show();
 	}
@@ -219,7 +219,7 @@ RecipeView = function(parent, id){
 	this.update = function(recipe){
 		this.recipe = recipe;
 		this.attributesPanel.update(recipe);
-		this.elavorationPanel.update(recipe);
+		this.elaborationPanel.update(recipe);
 	}
 }
 
@@ -242,7 +242,7 @@ RecipeAttributes = function(parent, id){
 RecipePeopleAmountPanel = function(parent, id){
 	this.recipe = null;
 	this.staticText = "Número de personas: ";
-	parent.component.append("<div id='"+id+"' class='peopleAmountPanel'/>");
+	parent.component.append("<div id='"+id+"' class='centerSubtitle'/>");
 	this.component = $j("#"+id);
 	this.update = function(recipe){
 		this.recipe = recipe;
@@ -272,11 +272,19 @@ IngredientList = function(parent, id){
 	}
 }
 
-RecipeElavoration = function(parent, id){
+RecipeElaboration = function(parent, id){
 	this.recipe = null;
-	parent.component.append("<div id='"+id+"' class='recipeElavorationPanel' />");
+	parent.component.append("<div id='"+id+"' class='recipeElaborationPanel' />");
 	this.component = $j("#"+id);
+	this.component.append("<h1 id='elaborationTitle'/>");
+	this.component.append("<div class='subtitle'>Elaboración</div>");
+	this.component.append("<p id='elaborationText' class='textArea'/>");
+	
+	this.elaborationTitle = $j("#elaborationTitle");
+	this.elaborationArea = $j("#elaborationText");
 	this.update = function(recipe){
 		this.recipe = recipe;
+		this.elaborationTitle.html(recipe.name);
+		this.elaborationArea.html(recipe.elaboration);
 	}
 }
