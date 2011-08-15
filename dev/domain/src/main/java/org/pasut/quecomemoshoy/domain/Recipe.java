@@ -1,11 +1,9 @@
-package org.pasut.quecomemoshoy.model;
+package org.pasut.quecomemoshoy.domain;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.opensource.pasut.persister.mongodb.annotaions.Persistable;
 
 @Persistable("recipes")
@@ -94,7 +92,7 @@ public final class Recipe {
 	
 	@Override
 	public String toString(){
-		return new ObjectMapper().convertValue(this, HashMap.class).toString();
+		return getName();
 	}
 
 	public List<Ingredient> getOptionalIngredients() {

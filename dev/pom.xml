@@ -8,6 +8,8 @@
 	<name>Que Comemos Hoy</name>
 
 	<modules>
+		<module>repository</module>
+		<module>domain</module>
 		<module>services</module>
 		<module>web</module>
 		<module>android-client</module>

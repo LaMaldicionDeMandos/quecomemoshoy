@@ -1,4 +1,4 @@
-package org.pasut.quecomemoshoy.model;
+package org.pasut.quecomemoshoy.domain;
 
 
 public final class Ingredient {

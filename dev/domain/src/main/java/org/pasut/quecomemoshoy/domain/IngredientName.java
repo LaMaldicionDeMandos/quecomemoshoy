@@ -1,4 +1,4 @@
-package org.pasut.quecomemoshoy.model;
+package org.pasut.quecomemoshoy.domain;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.opensource.pasut.persister.mongodb.annotaions.Persistable;

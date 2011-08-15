@@ -6,9 +6,10 @@ Class-Path: activation-1.1.jar aopalliance-1.0.jar apache-mime4j-0.6.j
  jackson-mapper-asl-1.5.3.jar javassist-3.6.0.GA.jar javax.servlet-api
  -3.0.1.jar jaxb-api-2.1.jar jaxb-impl-2.1.10.jar jaxrs-api-1.1.GA.jar
   jcl-over-slf4j-1.5.8.jar jettison-1.1.jar jsr250-api-1.0.jar mail-1.
- 4.jar persister-service-1.0.0.jar quecomemoshoy-services.jar resteasy
- -guice-1.1.GA.jar resteasy-jackson-provider-1.1.GA.jar resteasy-jaxb-
- provider-1.1.GA.jar resteasy-jaxrs-1.1.GA.jar resteasy-multipart-prov
- ider-1.1.GA.jar scannotation-1.0.2.jar sjsxp-1.0.1.jar slf4j-api-1.5.
- 8.jar slf4j-simple-1.5.8.jar stax-api-1.0.jar
+ 4.jar persister-service-1.0.0.jar quecomemoshoy-domain.jar quecomemos
+ hoy-repository.jar quecomemoshoy-services.jar resteasy-guice-1.1.GA.j
+ ar resteasy-jackson-provider-1.1.GA.jar resteasy-jaxb-provider-1.1.GA
+ .jar resteasy-jaxrs-1.1.GA.jar resteasy-multipart-provider-1.1.GA.jar
+  scannotation-1.0.2.jar sjsxp-1.0.1.jar slf4j-api-1.5.8.jar slf4j-sim
+ ple-1.5.8.jar stax-api-1.0.jar
 
