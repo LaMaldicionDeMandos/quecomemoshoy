@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff0000ff"
     android:weightSum="1" android:orientation="vertical">
-    <AutoCompleteTextView android:id="@+id/quickSearch" 
+    <org.pasut.quecomemoshoy.android.components.RecipesQuickSearchText android:id="@+id/quickSearch" 
     	android:hint="@string/quickSearchText" 
     	android:layout_width="match_parent" 
     	android:layout_height="wrap_content">
         <requestFocus></requestFocus>
-    </AutoCompleteTextView>
-    <ListView android:id="@+id/recipeList" 
-    	android:background="#55ff0000"
+    </org.pasut.quecomemoshoy.android.components.RecipesQuickSearchText>
+    <org.pasut.quecomemoshoy.android.components.RecipeListView android:id="@+id/recipeList" 
+    	android:background="#ffffeab7"
     	android:layout_height="wrap_content" 
     	android:layout_weight="1" 
-    	android:layout_width="match_parent"></ListView>
+    	android:layout_width="match_parent">
+    </org.pasut.quecomemoshoy.android.components.RecipeListView>
 </LinearLayout>
