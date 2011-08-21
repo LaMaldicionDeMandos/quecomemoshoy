@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:weightSum="1" android:orientation="vertical">
+    <TextView android:id="@+id/title"
+    	android:layout_width="match_parent" 
+    	android:layout_weight="0.09" 
+    	android:layout_height="wrap_content" 
+    	android:textAppearance="?android:attr/textAppearanceLarge" 
+    	android:gravity="center_horizontal" 
+    	android:textStyle="bold"
+    	android:textSize="40sp"/>
+    <ImageView android:id="@+id/photoContainer"
+    	android:layout_height="wrap_content" 
+    	android:src="@drawable/icon" 
+    	android:layout_width="match_parent" 
+    	android:layout_gravity="top" 
+    	android:layout_weight="0.24"/>
+    <TextView android:id="@+id/peopleAmountContainer" 
+    	android:layout_height="wrap_content" 
+    	android:layout_weight="0.09" 
+    	android:textAppearance="?android:attr/textAppearanceMedium" 
+    	android:gravity="center_horizontal" 
+    	android:layout_width="match_parent"/>
+    <LinearLayout android:id="@+id/ingredientBox" 
+    	android:layout_height="wrap_content" 
+    	android:layout_weight="0.09" 
+    	android:orientation="vertical" 
+    	android:layout_width="wrap_content">
+    	<TextView android:id="@+id/ingredientSubtitle" 
+    		android:layout_width="match_parent" 
+    		android:layout_weight="0.09" 
+    		android:layout_height="wrap_content"
+    		android:textStyle="bold"
+    		android:textSize="16sp" 
+    		android:text="@string/ingredientTitle"/>
+    </LinearLayout>
+    <View android:layout_width="fill_parent" android:layout_height="1dip"
+		android:background="#ffcecfce" />
+	<LinearLayout android:id="@+id/optionalIngredientBox" 
+    	android:layout_height="wrap_content" 
+    	android:layout_weight="0.09" 
+    	android:orientation="vertical" 
+    	android:layout_width="wrap_content">
+    	<TextView android:id="@+id/optionalIngredientSubtitle" 
+    		android:layout_width="match_parent" 
+    		android:layout_weight="0.09" 
+    		android:layout_height="wrap_content"
+    		android:textStyle="bold"
+    		android:textSize="16sp" 
+    		android:text="@string/optionalIngredientTitle"/>
+    </LinearLayout>
+    <View android:layout_width="fill_parent" android:layout_height="1dip"
+		android:background="#ffcecfce" />
+    <TextView android:id="@+id/elavoration" 
+    	android:layout_height="wrap_content" 
+    	android:background="@drawable/corner_radius_text" 
+    	android:textColor="#000000" 
+    	android:textSize="14sp" 
+    	android:layout_gravity="center_horizontal" 
+    	android:layout_marginLeft="5sp" 
+    	android:layout_marginRight="5sp" 
+    	android:layout_marginTop="5sp" 
+    	android:layout_width="match_parent" 
+    	android:layout_weight="0.00" />
+</LinearLayout>

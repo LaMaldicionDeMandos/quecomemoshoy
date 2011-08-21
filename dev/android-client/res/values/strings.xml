@@ -2,4 +2,12 @@
 <resources>
     <string name="app_name">Que Comemos Hoy</string>
     <string name="quickSearchText">Escriba el nombre de la receta</string>
+    
+    <string name="ingredientTitle"><u>Ingredientes:</u></string>
+    <string name="optionalIngredientTitle"><u>Ingredientes opcionales:</u></string>
+    <!-- Esto es para podes escribir valores con valores numericos -->
+    <plurals name="peopleAmount">
+    	<item quantity="one">Para una persona</item>
+    	<item quantity="other">Para %d personas</item>
+    </plurals>
 </resources>

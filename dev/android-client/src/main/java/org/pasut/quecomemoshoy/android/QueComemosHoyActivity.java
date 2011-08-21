@@ -3,10 +3,11 @@ package org.pasut.quecomemoshoy.android;
 import org.pasut.quecomemoshoy.android.components.OnSelectRecipeListener;
 import org.pasut.quecomemoshoy.android.components.RecipeListView;
 import org.pasut.quecomemoshoy.android.components.RecipesQuickSearchText;
+import org.pasut.quecomemoshoy.android.model.ModelLocator;
 import org.pasut.quecomemoshoy.domain.Recipe;
 
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -27,8 +28,15 @@ public class QueComemosHoyActivity extends Activity implements OnSelectRecipeLis
 
 	@Override
 	public void onSelectRecipe(Recipe recipe) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		AlertDialog alert = builder.setMessage(recipe.toString()).setTitle("Item Seleccionado:").create();
-		alert.show();		
+//		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//		AlertDialog alert = builder.setMessage(recipe.toString()).setTitle("Item Seleccionado:").create();
+//		alert.show();
+		ModelLocator.getInstance().setCurrentRecipe(recipe);
+		goToDetail();
+	}
+	
+	private void goToDetail(){
+		Intent intent = new Intent(this,RecipeDetailActivity.class);
+		startActivity(intent);
 	}
 }

@@ -17,6 +17,8 @@ import org.pasut.quecomemoshoy.domain.Recipe;
 import android.net.http.AndroidHttpClient;
 
 public class ModelLocator {
+	private Recipe currentRecipe;
+	
 	private ModelLocator(){}
 	
 	private static class LazyHolder{
@@ -93,12 +95,52 @@ public class ModelLocator {
 			 return recipes;
 		 }
 		 
-		 //TODO Esto está incompleto, hay que agregar el restp de los atributos
 		 private Recipe createRecipe(String data) throws JSONException{
 			 JSONObject json = new JSONObject(data);
 			 String name = json.getString("name");
-			 Recipe recipe = new Recipe(name, "", 1, new ArrayList<Ingredient>());
+			 String elavoration = json.getString("elaboration");
+			 int peopleAmount = json.getInt("peopleAmount");
+			 List<Ingredient> ingredients = getIngredients(json.getJSONArray("ingredients"));
+			 List<Ingredient> optionalIngredients = getIngredients(json.getJSONArray("optionalIngredients"));
+			 List<String> photos = getPhotos(json.getJSONArray("photos"));
+			 String video = json.getString("video");
+			 Recipe recipe = new Recipe(name, elavoration, peopleAmount, ingredients, optionalIngredients);
+			 for (String photo : photos) {
+				recipe.addPhoto(photo);
+			 }
+			 recipe.setVideo(video);
 			 return recipe;
 		 }
+		 
+		 private List<Ingredient> getIngredients(JSONArray list) throws JSONException{
+			 List<Ingredient> ingredients = new ArrayList<Ingredient>();
+			 for(int i=0;i<list.length();i++){
+				 ingredients.add(createIngredient(list.getJSONObject(i)));
+			 }
+			 return ingredients;
+		 }
+		 
+		 private Ingredient createIngredient(JSONObject json) throws JSONException{
+			 String name = json.getString("name");
+			 String measure = json.getString("measure");
+			 String value = json.getString("value");
+			 return new Ingredient(name,value,measure);
+		 }
+		 
+		 private List<String> getPhotos(JSONArray list) throws JSONException{
+			 List<String> photos = new ArrayList<String>();
+			 for(int i=0;i<list.length();i++){
+				 photos.add(list.getString(i));
+			 }
+			 return photos;
+		 }
+	}
+
+	public Recipe getCurrentRecipe() {
+		return currentRecipe;
+	}
+
+	public void setCurrentRecipe(Recipe currentRecipe) {
+		this.currentRecipe = currentRecipe;
 	}
 }
