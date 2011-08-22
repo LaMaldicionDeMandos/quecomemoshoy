@@ -16,6 +16,16 @@
 			<artifactId>quecomemoshoy-services</artifactId>
 			<version>${pom.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.5.3</version>
+		</dependency>
 		<!-- Web Container dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

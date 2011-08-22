@@ -6,7 +6,7 @@ import org.opensource.pasut.persister.mongodb.annotaions.Persistable;
 @Persistable("ingredients")
 public final class IngredientName {
 	
-	@JsonProperty
+	@JsonProperty("_id")
 	private String id;
 	private String name;
 	

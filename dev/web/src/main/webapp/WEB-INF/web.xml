@@ -5,7 +5,7 @@
 	
 	<context-param>
 		<param-name>resteasy.guice.modules</param-name>
-		<param-value>org.pasut.quecomemoshoy.config.Builder</param-value>
+		<param-value>org.pasut.quecomemoshoy.services.config.Builder</param-value>
 	</context-param>
 	
 	<context-param>

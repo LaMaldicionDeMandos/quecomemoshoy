@@ -9,14 +9,14 @@ import org.opensource.pasut.persister.mongodb.annotaions.Persistable;
 @Persistable("recipes")
 public final class Recipe {
 	
-	@JsonProperty
+	@JsonProperty("_id")
 	private String id;
 	private String name;
-	private List<Ingredient> ingredients;
-	private List<Ingredient> optionalIngredients;
+	private List<Ingredient> ingredients = new ArrayList<Ingredient>();
+	private List<Ingredient> optionalIngredients = new ArrayList<Ingredient>();
 	private int peopleAmount;
 	private String elaboration;
-	private List<String> photos;
+	private List<String> photos = new ArrayList<String>();
 	private String video;
 	
 	public Recipe(){}
@@ -54,18 +54,43 @@ public final class Recipe {
 	public String getName() {
 		return name;
 	}
+	
+	protected void setName(String value){
+		name = value;
+	}
+	
 	public List<Ingredient> getIngredients() {
 		return new ArrayList<Ingredient>(ingredients);
 	}
+	
+	protected void setIngredients(List<Ingredient> value){
+		ingredients = value;
+	}
+	
 	public int getPeopleAmount() {
 		return peopleAmount;
 	}
+	
+	protected void setPeopleAmount(int value){
+		peopleAmount = value;
+	}
+	
 	public String getElaboration() {
 		return elaboration;
 	}
+	
+	protected void setElaboration(String value){
+		elaboration = value;
+	}
+	
 	public List<String> getPhotos() {
 		return new ArrayList<String>(photos);
 	}
+	
+	protected void setPhotos(List<String> value){
+		photos = value;
+	}
+	
 	public String getVideo() {
 		return video;
 	}
@@ -97,5 +122,9 @@ public final class Recipe {
 
 	public List<Ingredient> getOptionalIngredients() {
 		return optionalIngredients;
+	}
+	
+	protected void setOptionalIngredients(List<Ingredient> value){
+		optionalIngredients = value;
 	}
 }

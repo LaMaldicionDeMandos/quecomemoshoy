@@ -45,5 +45,17 @@ public final class Ingredient {
 	public String toString(){
 		return this.name + " " + value + " " + measure;
 	}
+
+	protected void setName(String name) {
+		this.name = name;
+	}
+
+	protected void setMeasure(String measure) {
+		this.measure = measure;
+	}
+
+	protected void setValue(String value) {
+		this.value = value;
+	}
 	
 }
