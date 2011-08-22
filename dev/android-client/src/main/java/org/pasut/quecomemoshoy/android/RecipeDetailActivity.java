@@ -44,6 +44,7 @@ public class RecipeDetailActivity extends Activity {
 	
 	private void setIngredients(LinearLayout view, List<Ingredient> ingredients){
 		TextView textView = new TextView(this);
+		textView.setTextColor(0xff000000);
 		StringBuilder s = new StringBuilder("");
 		for(Ingredient ingredient : ingredients){
 			s.append(ingredient+"\n");

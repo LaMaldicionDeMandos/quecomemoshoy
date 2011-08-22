@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/cooking"
     android:weightSum="1" android:orientation="vertical">
     <org.pasut.quecomemoshoy.android.components.RecipesQuickSearchText android:id="@+id/quickSearch" 
     	android:hint="@string/quickSearchText" 
@@ -10,7 +11,7 @@
         <requestFocus></requestFocus>
     </org.pasut.quecomemoshoy.android.components.RecipesQuickSearchText>
     <org.pasut.quecomemoshoy.android.components.RecipeListView android:id="@+id/recipeList" 
-    	android:background="#ffffeab7"
+    	android:background="#80ffeab7"
     	android:layout_height="wrap_content" 
     	android:layout_weight="1" 
     	android:layout_width="match_parent">
