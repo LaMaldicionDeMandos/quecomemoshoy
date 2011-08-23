@@ -6,6 +6,36 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<name>Que Comemos Hoy</name>
+	
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.db.name>qch</build.db.name>
+				<build.db.host>localhost</build.db.host>
+				<build.db.port>27017</build.db.port>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<build.db.name>qch</build.db.name>
+				<build.db.host>localhost</build.db.host>
+				<build.db.port>27017</build.db.port>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<build.db.name>qch</build.db.name>
+				<build.db.host>localhost</build.db.host>
+				<build.db.port>27017</build.db.port>
+			</properties>
+		</profile>
+	</profiles>
 
 	<modules>
 		<module>repository</module>

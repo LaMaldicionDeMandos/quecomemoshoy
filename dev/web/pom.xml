@@ -10,6 +10,20 @@
 		<artifactId>quecomemoshoy-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>${pom.groupId}</groupId>
